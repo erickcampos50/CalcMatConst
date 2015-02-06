@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="../../favicon.ico">
+
+        <title>Calculadora de material de construção para paredes</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="jumbotron-narrow.css" rel="stylesheet">
+
+        <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+        <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+        <script src="bootstrap/assets/ie-emulation-modes-warning.js"></script>
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="header">
+                <nav>
+                    <ul class="nav nav-pills pull-right">
+                        <!--            <li role="presentation" class="active"><a href="#">Home</a></li>
+                                    <li role="presentation"><a href="#">About</a></li>
+                                    <li role="presentation"><a href="#">Contact</a></li>-->
+                    </ul>
+                </nav>
+                <h3 class="text-muted">Calculadora de Materiais de Construção para Paredes</h3>
+            </div>
+
+            <div class="row marketing">
+                <div class="col-lg-6">
+
+                    <form class="form-horizontal">
+                        <div class="page-header">
+                            <h4>Proporções da massa</h4>
+                        </div>
+						<div class="page-header">
+                            <h5>Insira aqui as proporções de massa que deseja usar.</h5>
+                        </div>
+						<div class="page-header">
+                            <h5>Valores padrão foram inseridos automaticamente. Edite-os como preferir, basta digitar e os valores serão sobrescritos.</h5>
+                        </div>
+                        <div class="form-group">
+                            <label for="areia" class="col-sm-7 control-label">Areia</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="areia" placeholder="4" data-toggle="tooltip" data-placement="top" title="" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cimento" class="col-sm-7 control-label">Cimento</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="cimento" placeholder="1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="agrofilito" class="col-sm-7 control-label">Agrofilito ou Cal</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="agrofilito" placeholder="1"  data-toggle="tooltip" data-placement="top" title="Preencha este campo com a proporção do elemento de liga."/>
+                            </div>
+                        </div>
+                        <!--                        
+                                                <div class="page-header">
+                                                    <h4>Proporcoes da massa</h4>
+                                                    <p class="help-block">Proporcoes da massa: 4x1x1 ou 5x1x1 sao um exemplo, 
+                                                        o usuario podera escolher a proproporcao e tambem tera a opcao de 
+                                                        usar proporcoes diferentes para massa entre blocos/tijolos e reboco
+                                                    </p>
+                                                </div>-->
+
+                        <!--------------------------------------------------->
+
+                        <div class="page-header">
+                            <h4>Dimensões das paredes</h4>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="altura" class="col-sm-7 control-label">Insira a altura padrão das paredes nesse andar em metros</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="altura" placeholder="3">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="largura" class="col-sm-7 control-label">Comprimento linear somado de todas as paredes que serão construidas (m)</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="largura" placeholder="100">
+                            </div>
+                        </div>
+
+                        <div class="page-header">
+                            <h4>Dimensões e quantidades de janelas e portas</h4>
+                        </div>
+
+                        <blockquote>
+                            <p class="help-block small">
+                                Aqui entrarão valores de portas,janelas, basculantes, etc.
+                            </p>
+                        </blockquote>
+
+                        
+                        <div id="vaos">
+                            <div class="vao">
+                                <div class="form-group">
+                                    <label class="col-xs-7 control-label">Largura do vão</label>
+                                    <div class="col-xs-3 ">
+                                        <input type="text" class="form-control vaoLargura" placeholder="0">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-xs-7 control-label">Altura do vão</label>
+                                    <div class="col-xs-3 ">
+                                        <input type="text" class="form-control vaoAltura" placeholder="0">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-xs-7 control-label">Quantidade de vãos</label>
+                                    <div class="col-xs-3">
+                                        <input type="text" class="form-control qtVao" placeholder="0">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-default btn-sm pull-right" id="addVao">
+                            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add Elemento
+                        </button>
+
+                        <br/>
+
+                        <div class="page-header">
+                            <h4>Dimensoes dos tijolos ou blocos</h4>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="alturaTijolo" class="col-sm-7 control-label">Altura dos tijolos ou blocos (m)</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="alturaTijolo" placeholder="0,2">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="larguraTijolo" class="col-sm-7 control-label">Largura dos tijolos ou blocos (m)</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="larguraTijolo" placeholder="0,3">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="espessuraTijolo" class="col-sm-7 control-label">Espessura dos tijolos ou blocos (m)</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="espessuraTijolo" placeholder="0,1">
+                            </div>
+                        </div>
+
+                        <div class="page-header">
+                            <h4>Dimensoes da massa</h4>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="espessuraMassa" class="col-sm-7 control-label">Espessura da massa entre os tijolos</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="espessuraMassa" placeholder="0,02">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="espessuraReboco" class="col-sm-7 control-label">Espessura do reboco</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="espessuraReboco" placeholder="0,01">
+                            </div>
+                        </div>
+
+
+                        <div class="page-header">
+                            <h4>Densidade dos materiais</h4>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="densidadeCimento" class="col-sm-7 control-label">Densidade real do cimento (kg/m³)</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="densidadeCimento" placeholder="1420">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="densidadeAreia" class="col-sm-7 control-label">Densidade real da areia (kg/m³)</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="densidadeAreia" placeholder="1400">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="densidadeAgrofilito" class="col-sm-7 control-label">Densidade real do agrofilito (kg/m³)</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="densidadeAgrofilito" placeholder="3350">
+                            </div>
+                        </div>
+
+
+                    </form>
+
+                </div>
+
+                <div class="col-lg-6" style="background-color: #eee; border-radius: 6px;">
+                    <div class="page-header">
+                        <h4>Quantidade de tijolos como funcao da area (m²)</h4>
+                        <h2 class="text-center"><strong><span id="Tij">0</span> tijolos</strong></h2>
+                    </div>
+                    <div class="page-header">
+                        <h4>Massa necessaria de cimento para os tijlos (kg)</h4>
+                        <h2 class="text-center"><strong><span id="MassCim">0</span> kg</strong></h2>
+                    </div>
+                    <div class="page-header">
+                        <h4>Massa necessaria de areia para os tijlos (kg)</h4>
+                        <h2 class="text-center"><strong><span id="MassAr">0</span> kg</strong></h2>
+                    </div>
+                    <div class="page-header">
+                        <h4>Massa necessaria de agrofilito ou cal para os tijlos (kg)</h4>
+                        <h2 class="text-center"><strong><span id="MassAg">0</span> kg</strong></h2>
+                    </div>
+                    <div class="page-header">
+                        <h4>Massa necessaria de cimento para o reboco (kg)</h4>
+                        <h2 class="text-center"><strong><span id="MassCimR">0</span> kg</strong></h2>
+                    </div>
+                    <div class="page-header">
+                        <h4>Massa necessaria de areia para o reboco (kg)</h4>
+                        <h2 class="text-center"><strong><span id="MassArR">0</span> kg</strong></h2>
+                    </div>
+                    <div class="page-header">
+                        <h4>Massa necessaria de Agrofilito ou cal para o reboco (kg)</h4>
+                        <h2 class="text-center"><strong><span id="MassAgR">0</span> kg</strong></h2>
+                    </div>
+                    <div class="page-header">
+                        <h4>Massa total dos componentes (kg)</h4>
+                        <h2 class="text-center"><strong>Cimento <span id="MassCimT">0</span> kg</strong></h2>
+                        <h2 class="text-center"><strong>Areia <span id="MassArT">0</span> kg</strong></h2>
+                        <h2 class="text-center"><strong>Agrofilito <span id="MassAgT">10</span> kg</strong></h2>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+
+            <footer class="footer">
+                <p>&copy; Universidade Federal de Juiz de Fora - GV - 2015</p>
+            </footer>
+
+        </div> <!-- /container -->
+
+        <!-- Bootstrap core JavaScript ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="js/jquery.mask.min.js"></script>
+        
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="bootstrap/assets/ie10-viewport-bug-workaround.js"></script>
+        
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        
+        <script type="text/javascript">
+            
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+            
+            function trataCampo(campo){
+                 //campo.mask('00000.00', {reverse: true});
+            }
+
+            function trataCampoInteiro(campo){
+                 //campo.mask('00000', {reverse: true});
+            }
+            
+            function atualizaValores(){
+                var areia = ($("#areia").val() == "") ? 4 : $("#areia").val();
+                var areiaReboco = ($("#areia").val() == "") ? 4 : $("#areia").val();
+                var cimento = ($("#cimento").val() == "") ? 1 : $("#cimento").val();               
+                var cimentoReboco = ($("#cimento").val() == "") ? 1 : $("#cimento").val();                  
+                var agrofilito = ($("#agrofilito").val() == "") ? 1 : $("#agrofilito").val();   
+                var agrofilitoReboco = ($("#agrofilito").val() == "") ? 1 : $("#agrofilito").val();  
+                var altura = ($("#altura").val() == "") ? 3 : $("#altura").val();
+                var largura = ($("#largura").val() == "") ? 100 : $("#largura").val();
+                var alturaTijolo = ($("#alturaTijolo").val() == "") ? 0.2 : $("#alturaTijolo").val();
+                var larguraTijolo = ($("#larguraTijolo").val() == "") ? 0.3 : $("#larguraTijolo").val();
+                var espessuraTijolo = ($("#espessuraTijolo").val() == "") ? 0.1 : $("#espessuraTijolo").val();
+                var espessuraMassa = ($("#espessuraMassa").val() == "") ? 0.02 : $("#espessuraMassa").val();
+                var espessuraReboco = ($("#espessuraReboco").val() == "") ? 0.01 : $("#espessuraReboco").val();
+                var densidadeCimento = ($("#densidadeCimento").val() == "") ? 1420 : $("#densidadeCimento").val();
+                var densidadeAreia = ($("#densidadeAreia").val() == "") ? 1400 : $("#densidadeAreia").val();
+                var densidadeAgrofilito = ($("#densidadeAgrofilito").val() == "") ? 3350 : $("#densidadeAgrofilito").val();
+
+        
+                var vaosDimen = [];
+                var areaTotalVaos = 0;
+                
+                for(i = 0; i < $(".vaoLargura").size(); i++){
+                    vaosDimen[i] = [
+                        $($(".vaoLargura")[i]).val(),
+                        $($(".vaoAltura")[i]).val(),
+                        $($(".qtVao")[i]).val()
+                    ];
+                    
+                    areaTotalVaos = vaosDimen[i][0]*vaosDimen[i][1]*vaosDimen[i][2];
+                }
+                
+                //Quantidade de tijolos como funcao da area (m²)
+                var Tij = (altura*largura-areaTotalVaos)/((alturaTijolo+espessuraMassa)*(larguraTijolo+espessuraMassa));
+                
+                //Massa necessaria de cimento para os tijlos (kg)
+                var MassCim = Tij*(2*alturaTijolo*espessuraTijolo*espessuraMassa/2+2*larguraTijolo*espessuraMassa*espessuraTijolo/2)*densidadeCimento*cimento/(areia+cimento+agrofilito);
+                
+                //Massa necessaria de areia para os tijlos (kg)
+                var MassAr = MassCim*areia/cimento*densidadeAreia/densidadeCimento;
+                
+                //Massa necessaria de agrofilito ou cal para os tijlos (kg)
+                var MassAg = MassCim*agrofilito/cimento*densidadeAgrofilito/densidadeCimento;
+                
+                //Massa necessaria de cimento para o reboco (kg)
+                //Multiplicacao feita considerando que a espessura do reboco interno e externo sejam iguais 
+                var MassCimR = (altura*largura-areaTotalVaos)*densidadeCimento*cimentoReboco/(areiaReboco+cimentoReboco+agrofilitoReboco)*2;
+                
+                //Massa necessaria de areia para o reboco (kg)
+                var MassArR = MassCimR*areiaReboco/cimentoReboco*densidadeAreia/densidadeCimento;
+                
+                //Massa necessaria de Agrofilito ou cal para o reboco (kg)
+                var MassAgR = MassCimR*agrofilitoReboco/cimentoReboco*densidadeAgrofilito/densidadeCimento;
+                
+                //Massa total dos componentes [kg]
+                var MassCimT = MassCim+MassCimR
+                var MassArT = MassAr+MassArR
+                var MassAgT = MassAg+MassAgR
+                
+                $("#Tij").text(Math.ceil(Tij.toFixed(2)));
+                $("#MassCim").text(MassCim.toFixed(2));
+                $("#MassAr").text(MassAr.toFixed(2));
+                $("#MassAg").text(MassAg.toFixed(2));
+                $("#MassCimR").text(MassCimR.toFixed(2));
+                $("#MassArR").text(MassArR.toFixed(2));
+                $("#MassAgR").text(MassAgR.toFixed(2));
+                $("#MassCimT").text(MassCimT.toFixed(2));
+                $("#MassArT").text(MassArT.toFixed(2));
+                $("#MassAgT").text(MassAgT.toFixed(2));
+                
+                
+            }
+            
+            
+            
+            $("#addVao").click(function(){
+                novoVao = $($(".vao")[0]).clone().css({
+                    "border-top":"1px solid #ccc",
+                    "padding-top": "15px"
+                }).appendTo("#vaos");
+                        
+                btnRemover = $("<button>",{
+                    type : "button",
+                    "class" : "btn btn-default btn-sm-2 pull-left",
+                    append : $('<span>',{
+                        "class" : "glyphicon glyphicon-minus-sign",
+                        "aria-hidden" : "true"
+                    }),
+                    click : function(event) {
+                        //event.preventDefault();
+                        $(this).parents(".vao").remove();
+                        //console.log();
+                    }
+                });
+                
+                novoVao.find(".qtVao").parent().after(btnRemover);
+                
+                
+                trataCampo($(".vaoLargura"));
+                trataCampo($(".vaoAltura"));
+                trataCampoInteiro($(".qtVao"));
+            });
+            
+            
+            
+            
+            $("#areia").keyup(function(event){atualizaValores()});
+            $("#cimento").keyup(function(event){atualizaValores()});
+            $("#agrofilito").keyup(function(event){atualizaValores()});
+            $("#altura").keyup(function(event){atualizaValores()});
+            $("#largura").keyup(function(event){atualizaValores()});
+            $("#alturaTijolo").keyup(function(event){atualizaValores()});
+            $("#larguraTijolo").keyup(function(event){atualizaValores()});
+            $("#espessuraTijolo").keyup(function(event){atualizaValores()});
+            $("#espessuraMassa").keyup(function(event){atualizaValores()});
+            $("#espessuraReboco").keyup(function(event){atualizaValores()});
+            $("#densidadeCimento").keyup(function(event){atualizaValores()});
+            $("#densidadeAreia").keyup(function(event){atualizaValores()});
+            $("#densidadeAgrofilito").keyup(function(event){atualizaValores()});
+            $(".vaoLargura").keyup(function(event){atualizaValores()});
+            $(".vaoAltura").keyup(function(event){atualizaValores()});
+            $(".qtVao").keyup(function(event){atualizaValores()});
+            
+            trataCampo($("#areia"));
+            trataCampo($("#cimento"));
+            trataCampo($("#agrofilito"));
+            trataCampo($("#altura"));
+            trataCampo($("#largura"));
+            trataCampo($("#alturaTijolo"));
+            trataCampo($("#larguraTijolo"));
+            trataCampo($("#espessuraTijolo"));
+            trataCampo($("#espessuraMassa"));
+            trataCampo($("#espessuraReboco"));
+            trataCampo($("#densidadeCimento"));
+            trataCampo($("#densidadeAreia"));
+            trataCampo($(".vaoLargura"));
+            trataCampo($(".vaoAltura"));
+            trataCampoInteiro($(".qtVao"));
+            
+            
+        </script>
+        
+        
+    </body>
+</html>
+
